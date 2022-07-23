@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "5ec58df0-a9c8-4224-b8fb-7db35105cf6a",
+		"name": "Google Place",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPlace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=AIzaSyCDcUmm1LO0yeRVqdPsxo2ku6-weisiWHk",
+					"protocol": "https",
+					"host": [
+						"maps",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"maps",
+						"api",
+						"place",
+						"findplacefromtext",
+						"json"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "Museum%20of%20Contemporary%20Art%20Australia"
+						},
+						{
+							"key": "inputtype",
+							"value": "textquery"
+						},
+						{
+							"key": "fields",
+							"value": "formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyCDcUmm1LO0yeRVqdPsxo2ku6-weisiWHk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
