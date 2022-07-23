@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "5ec58df0-a9c8-4224-b8fb-7db35105cf6a",
+		"_postman_id": "b8b95177-ee4e-4e28-9d41-233f519a204d",
 		"name": "Google_Place",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1571358"
 	},
 	"item": [
 		{
@@ -190,12 +191,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key={{YOUR_API_KEY}}",
+					"raw": "https://{{BASE_URL}}/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key={{YOUR_API_KEY}}",
 					"protocol": "https",
 					"host": [
-						"maps",
-						"googleapis",
-						"com"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"maps",
@@ -233,12 +232,14 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"const responseJson = pm.response.json();",
+							"",
+							"",
 							"pm.test(\"TC001- Status code is 200\", () => {",
 							"  pm.expect(pm.response.code).to.eql(200);",
 							"});",
 							"",
 							"pm.test(\"TC002- Verify Status successfully in body\", () => {",
-							"  const responseJson = pm.response.json();",
 							"  pm.expect(responseJson.status).to.eql(\"OK\")",
 							"});",
 							"",
@@ -262,6 +263,10 @@
 							"pm.response.to.have.jsonSchema(schema);",
 							"})",
 							"",
+							"pm.test(\"TC004- Verify phone number is a number in response\",()=>{",
+							"    console.log(responseJson.result.formatted_phone_number)",
+							"    pm.expect(responseJson.result.formatted_phone_number).to.match(/^\\s*(?:\\?(\\d{1,3}))?[- (]*(\\d{2})[- )]*(\\d{4})[- ]*(\\d{4})(?: *[x/#]{1}(\\d+))?\\s*$/)",
+							"})",
 							""
 						],
 						"type": "text/javascript"
@@ -272,12 +277,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name%2Crating%2Cformatted_phone_number&key={{YOUR_API_KEY}}",
+					"raw": "https://{{BASE_URL}}/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name%2Crating%2Cformatted_phone_number&key={{YOUR_API_KEY}}",
 					"protocol": "https",
 					"host": [
-						"maps",
-						"googleapis",
-						"com"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"maps",
