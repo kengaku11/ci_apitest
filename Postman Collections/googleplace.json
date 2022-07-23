@@ -51,7 +51,7 @@
 							}
 						}
 					],
-					"_postman_id": "edecb36b-6243-4a83-856c-4b50c1ded06d",
+					"id": "edecb36b-6243-4a83-856c-4b50c1ded06d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -96,7 +96,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "8177aa9f-5015-43a1-aadf-2a65ff7cda5c"
+			"id": "8177aa9f-5015-43a1-aadf-2a65ff7cda5c"
 		},
 		{
 			"name": "GetPlace",
@@ -193,7 +193,7 @@
 					}
 				}
 			],
-			"_postman_id": "e32c9f8c-c8d0-46de-be19-c28f5ac37079",
+			"id": "e32c9f8c-c8d0-46de-be19-c28f5ac37079",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -274,7 +274,6 @@
 							"pm.response.to.have.jsonSchema(schema);",
 							"})",
 							"",
-							"",
 							"pm.test(\"TC004- Verify phone number is a number in response\",()=>{",
 							"    console.log(responseJson.result.formatted_phone_number)",
 							"    pm.expect(responseJson.result.formatted_phone_number).to.match(/^\\s*(?:\\?(\\d{1,3}))?[- (]*(\\d{2})[- )]*(\\d{4})[- ]*(\\d{4})(?: *[x/#]{1}(\\d+))?\\s*$/)",
@@ -285,7 +284,7 @@
 					}
 				}
 			],
-			"_postman_id": "d26b7be3-ca74-4a1e-acbb-165f7a0fd8ad",
+			"id": "d26b7be3-ca74-4a1e-acbb-165f7a0fd8ad",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
